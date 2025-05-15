@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --toastify-color-success: #10B981;
+  --toastify-color-error: #EF4444;
+  --toastify-color-warning: #F59E0B;
+  --toastify-color-info: #3B82F6;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-gray-50 text-gray-900 min-h-screen font-sans;
+}
+
+/* Custom styles for Quill editor */
+.ql-container {
+  @apply min-h-[200px] rounded-b-lg;
+  font-family: 'Inter', sans-serif;
+}
+
+.ql-toolbar {
+  @apply rounded-t-lg bg-gray-50 border-gray-300;
+}
+
+.ql-editor {
+  @apply min-h-[200px] text-base;
+}
+
+.ql-editor.ql-blank::before {
+  @apply text-gray-400 italic font-normal;
+}
+
+/* Animation classes */
+.page-transition-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.page-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.page-transition-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.page-transition-exit-active {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 300ms, transform 300ms;
+}
+
+/* Button animations */
+button {
+  @apply transition-all duration-300;
+}
+
+button:active {
+  @apply transform scale-95;
+}
+
+/* Card hover effects */
+.blog-card {
+  @apply transition-all duration-300;
+}
+
+.blog-card:hover {
+  @apply shadow-lg transform translate-y-[-2px];
+}
